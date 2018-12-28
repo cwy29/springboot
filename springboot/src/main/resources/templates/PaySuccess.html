@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>支付成功</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- jquery -->
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- jquery-validator -->
+    <script type="text/javascript" th:src="@{/jquery-validation/jquery.validate.min.js}"></script>
+    <script type="text/javascript" th:src="@{/jquery-validation/localization/messages_zh.min.js}"></script>
+    <!-- layer -->
+    <script type="text/javascript" th:src="@{/layer/layer.js}"></script>
+    <!-- md5.js -->
+    <script type="text/javascript" th:src="@{/js/md5.min.js}"></script>
+    <!-- common.js -->
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+
+    <style type="text/css">
+        #h1{
+            margin-left: 100px;
+            color: rgb(255, 255, 255);
+        }
+        h2{
+            color: #dc1a17;
+        }
+        body{
+            background-size: cover;
+            height: auto;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body background="/img/pay3.png">
+<!--/*@thymesVar id="p1_MerId" type=""*/-->
+<h1 id="h1">订单已生成</h1>
+
+<h1>
+        <div class="form-group">
+            <div class="row">
+                <label class="form-label col-md-4">商户编号：</label>
+                <div class="col-md-5">
+                    <h2 th:text=" ''+${p1_MerId}"></h2>
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <label class="form-label col-md-4">支付金额：</label>
+                <div class="col-md-5">
+                    <!--/*@thymesVar id="r3_Amt" type=""*/-->
+                    <h2 th:text=" ''+${r3_Amt}+'元'"></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <label class="form-label col-md-4">商户订单号：</label>
+                <!--/*@thymesVar id="r6_Order" type=""*/-->
+                <h2 th:text=" ''+${r6_Order}"></h2>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <label class="form-label col-md-4">支付成功时间:</label>
+                <div class="col-md-5">
+                    <!--/*@thymesVar id="rp_PayDate" type=""*/-->
+                    <h2 th:text=" ''+${rp_PayDate}"></h2>
+                </div>
+            </div>
+        </div>
+</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
